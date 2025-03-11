@@ -13,7 +13,7 @@ const counter = (function () {
   let count = 0;
 
   return function (n) {
-    if (n !== undefined) {
+    if (typeof n === "number") {
       count = n;
     }
 
@@ -49,7 +49,7 @@ const counterFactory = (function () {
 
   return {
     value(n) {
-      if (n !== undefined) {
+      if (typeof n === "number") {
         count = n;
       }
       return count;
@@ -129,7 +129,7 @@ console.log("#4", myMax(list)); // 512
  */
 
 const myMul = (a, b) => a * b;
-console.log("#5", myMul(8, 16)); // 126
+console.log("#5", myMul(8, 16)); // 128
 console.log("#5.1", myMul(32, 64)); // 2048
 
 /*
